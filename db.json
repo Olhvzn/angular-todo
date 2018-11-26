@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "email": "olehviznyi@gmail.com",
+      "password": "671687052",
+      "id": 1
+    },
+    {
+      "email": "olehviznyi@gmail.com",
+      "password": null,
+      "id": 2
+    },
+    {
+      "email": "olehviznyi@gmail.com",
+      "password": "ed",
+      "id": 3
+    },
+    {
+      "email": "fe@qdfqf",
+      "password": "qfqfqfqfq",
+      "id": 4
+    },
+    {
+      "email": "q@q",
+      "password": "12345",
+      "id": 5
+    },
+    {
+      "email": "w@w",
+      "password": "131321313",
+      "id": 6
+    },
+    {
+      "email": "s@s",
+      "password": "12345",
+      "id": 7
+    },
+    {
+      "email": "bbbb@bbb",
+      "password": "123123123",
+      "id": 8
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+
+<div class="container mt-5">
+  <div *ngIf ="message_password == false" class="alert alert-danger" > Password is not correct! </div>
+  <div *ngIf ="message_email == false" class="alert alert-danger" > This user is not exist! </div>
+  <div class="row">
+    <div class="col-6 m-auto">
+      <div class="card mb-5">
+        <div class="card-body">
+
+            <h5 class="card-title">Login</h5>
+
+          <form [formGroup] = "loginForm" (ngSubmit)="onSubmit()" name="loginForm">
+
+            <div class="form-group">
+              <label for="Email"> Email </label>
+              <input type="email" class ="form-control" [ngClass]="{'border border-danger':loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched) }" formControlName = "email" placeholder="Enter you email..." >
+              <div class="text-danger" *ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+                <span *ngIf=" loginForm.get('email').errors['required']" >E-mail is required</span>
+                <span *ngIf=" loginForm.get('email').errors['email']" >E-mail must be correct</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="Password">Password</label>
+              <input type="password" class ="form-control" [ngClass]="{'border border-danger': loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)}" formControlName = "password" placeholder="Enter you password..." >
+              <div class="text-danger" *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                  <span *ngIf = "loginForm.get('password').errors['required']">Password is required</span>
+
+                  <span *ngIf = "loginForm.get('password').errors['minlength'] && loginForm.get('password').errors['minlength']['requiredLength']" class="text-danger">
+                      Must be more than {{ loginForm.get('password').errors['minlength']['requiredLength'] }} symbols,
+                      actual is {{ loginForm.get('password').errors['minlength']['actualLength'] }}
+                  </span>
+
+              </div>
+            </div>
+
+            <button type ="submit" class="btn btn-primary" [disabled]="loginForm.invalid || loginForm.disabled" > Submit </button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
